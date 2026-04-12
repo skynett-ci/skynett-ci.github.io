@@ -6,100 +6,34 @@
     <title>sKynEt Tech - Solutions Logicielles Professionnelles</title>
     <style>
         :root {
-            --primary: #004a99; /* Bleu professionnel */
-            --accent: #e67e22;  /* Orange pour les boutons */
+            --primary: #004a99;
+            --accent: #e67e22;
             --dark: #2c3e50;
             --light: #f4f7f6;
         }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6; 
-            color: var(--dark); 
-            margin: 0; 
-            background: var(--light); 
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--dark); margin: 0; background: var(--light); }
+        header { background: var(--primary); color: white; padding: 2rem 0; text-align: center; }
+        nav { background: #fff; padding: 1rem; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        /* Style pour ta nouvelle image */
+        .main-banner {
+            width: 100%;
+            max-width: 600px; /* Taille raisonnable pour un logo/bannière */
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        header { 
-            background: var(--primary); 
-            color: white; 
-            padding: 3rem 0; 
-            text-align: center; 
-        }
-        nav { 
-            background: #fff; 
-            padding: 1rem; 
-            text-align: center; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000;
-        }
-        nav a { 
-            margin: 0 15px; 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: bold; 
-            text-transform: uppercase;
-        }
-        .container { 
-            max-width: 1100px; 
-            margin: auto; 
-            padding: 20px; 
-        }
-        .hero { 
-            text-align: center; 
-            padding: 40px 20px; 
-            background: white; 
-            margin-bottom: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 25px; 
-        }
-        .card { 
-            background: white; 
-            padding: 0; 
-            border-radius: 12px; 
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-            border-top: 5px solid var(--primary); 
-            transition: transform 0.3s ease;
-        }
-        .card:hover { transform: translateY(-5px); }
+
+        .hero { text-align: center; padding: 40px 20px; background: white; margin-bottom: 30px; border-radius: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); }
         .card-content { padding: 20px; }
-        .card img { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            background: #eee;
-        }
-        .btn { 
-            display: inline-block; 
-            background: var(--accent); 
-            color: white; 
-            padding: 12px 25px; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-weight: bold;
-            margin-top: 15px;
-        }
-        .download-section { 
-            background: white; 
-            padding: 40px; 
-            margin-top: 40px; 
-            border-radius: 12px; 
-            text-align: center; 
-        }
-        footer { 
-            background: var(--dark); 
-            color: white; 
-            text-align: center; 
-            padding: 30px; 
-            margin-top: 50px; 
-        }
-        strong { color: var(--primary); }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        footer { background: var(--dark); color: white; text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -112,79 +46,48 @@
 
 <header>
     <h1>sKynEt Tech</h1>
-    <p>Propulsez votre entreprise vers l'excellence numérique</p>
+    <p>L'expertise logicielle au service de votre performance</p>
 </header>
 
 <div class="container">
+    
+    <img src="imageskynet.jpeg" alt="Logo sKynEt Tech" class="main-banner">
+
     <section id="propos" class="hero">
         <h2>À Propos de sKynEt Tech</h2>
-        <p><em>Solutions professionnelles développées pour répondre aux réalités du marché africain.</em></p>
-        <p>
-            <strong>sKynEt Tech</strong> est spécialisée dans le développement de solutions logicielles robustes. 
-            Fort d'une expertise reconnue en <strong>WLangage (WinDev & WinDev Mobile)</strong>, nous concevons des outils capables de transformer la gestion quotidienne des sociétés de transport, de logistique et de paie.
-        </p>
+        <p>Expertise reconnue en <strong>WLangage (WinDev & WinDev Mobile)</strong> pour des solutions adaptées au marché ivoirien et africain.</p>
     </section>
 
-    <h2 id="logiciels" style="text-align:center; margin-bottom: 30px;">Nos Solutions Phares</h2>
+    <h2 id="logiciels" style="text-align:center; margin-bottom: 30px;">Nos Solutions</h2>
     <div class="grid">
-        
         <div class="card">
-            <img src="courrier.jpg" alt="Gestion de Courrier sKynEt Tech">
             <div class="card-content">
                 <h3>Gestion de Courrier & Colis</h3>
-                <p>Contrôle total de vos flux logistiques sur PC et Mobile.</p>
-                <ul>
-                    <li>Suivi précis de chaque colis.</li>
-                    <li>Validation sécurisée par code OTP.</li>
-                    <li>Impression thermique des reçus.</li>
-                </ul>
+                <p>Traçabilité totale, validation par OTP et support imprimante thermique.</p>
                 <a href="#" class="btn">Voir la démo</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="transport.jpg" alt="Gestion de Transport">
             <div class="card-content">
                 <h3>Transport & Flotte</h3>
-                <p>Optimisez la rentabilité de vos lignes avec un outil centralisé.</p>
-                <ul>
-                    <li>Gestion des sièges et départs.</li>
-                    <li>Suivi technique des véhicules.</li>
-                    <li>Caisse et recettes automatiques.</li>
-                </ul>
+                <p>Gestion des départs, des sièges et suivi technique des véhicules.</p>
                 <a href="#" class="btn">En savoir plus</a>
             </div>
         </div>
-
         <div class="card">
-            <img src="paie.jpg" alt="Administration de la Paie">
             <div class="card-content">
                 <h3>Administration de la Paie</h3>
-                <p>Évitez les erreurs de calcul et automatisez vos RH.</p>
-                <ul>
-                    <li>Calcul des salaires et cotisations.</li>
-                    <li>Bulletins de paie conformes.</li>
-                    <li>Suivi rigoureux du personnel.</li>
-                </ul>
+                <p>Calcul automatique des salaires et gestion conforme des RH.</p>
                 <a href="#" class="btn">Découvrir</a>
             </div>
         </div>
-
     </div>
+</div>
 
-    <section id="download" class="download-section">
-        <h2>Espace Téléchargement</h2>
-        <p>Testez nos versions de démonstration (.APK et .EXE)</p>
-        <div class="grid">
-            <div class="card-content" style="border: 1px dashed var(--primary); border-radius: 8px;">
-                <h4>Version Mobile Android</h4>
-                <p>Fichier .APK</p>
-                <a href="#" class="btn" style="background:#2ecc71;">Télécharger</a>
-            </div>
-            <div class="card-content" style="border: 1px dashed var(--primary); border-radius: 8px;">
-                <h4>Version Windows PC</h4>
-                <p>Fichier .EXE</p>
-                <a href="#" class="btn" style="background:#2ecc71;">Télécharger</a>
-            </div>
-        </div>
-    </section>
+<footer>
+    <p>© 2026 sKynEt Tech - Solutions Développées par un Expert.</p>
+    <p>📍 Abidjan, Côte d'Ivoire | 📞 +225 0103011008</p>
+</footer>
+
+</body>
+</html>

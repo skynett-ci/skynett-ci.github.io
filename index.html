@@ -1,231 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sKynEt Tech | Solutions ** Gestion Intelligentes</title>
+    <title>sKynEt Tech - Solutions Logicielles</title>
     <style>
         :root {
             --primary: #004a99;
-            --secondary: #00c6ff;
             --accent: #e67e22;
-            --dark: #1a1a1a;
-            --light: #ffffff;
-            --bg: #f8f9fa;
+            --dark: #2c3e50;
+            --light: #f4f7f6;
         }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background: var(--bg);
-            color: var(--dark);
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: var(--dark);
-            color: white;
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: var(--secondary);
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 100px 5%;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            padding: 60px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2rem;
-            color: var(--primary);
-        }
-
-        /* Section À Propos */
-        .about-box {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 60px;
-            line-height: 1.8;
-        }
-
-        /* Grid Logiciels */
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .software-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-top: 6px solid var(--primary);
-            transition: 0.3s;
-        }
-
-        .software-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card-content h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
-
-        .features-list {
-            font-size: 0.85rem;
-            color: #555;
-            padding-left: 20px;
-        }
-
-        .features-list li {
-            margin-bottom: 8px;
-        }
-
-        /* Boutons */
-        .btn-download {
-            display: block;
-            text-align: center;
-            background: var(--accent);
-            color: white;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-
-        .btn-download:hover {
-            background: #d35400;
-        }
-
-        footer {
-            background: var(--dark);
-            color: #888;
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark); margin: 0; background: var(--light); }
+        header { background: var(--primary); color: white; padding: 2rem 0; text-align: center; }
+        nav { background: #fff; padding: 1rem; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); sticky: top; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .hero { text-align: center; padding: 50px 20px; background: white; margin-bottom: 20px; border-radius: 8px; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-top: 4px solid var(--primary); }
+        .download-section { background: #fff; padding: 30px; margin-top: 30px; border-radius: 8px; text-align: center; }
+        footer { background: var(--dark); color: white; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
-
 <body>
-    <header>
-        <div class="logo">sKynEt Tech</div>
-        <nav><a href="#propos">&Agrave; Propos</a> <a href="#logiciels">Nos Logiciels</a> <a href="#telechargement">T&eacute;l&eacute;chargements</a></nav>
-    </header>
-    <section class="hero">
-        <h1>Propulsez ***** entreprise vers le num&eacute;rique</h1>
-        <p>********* professionnelles d&eacute;velopp&eacute;es pour les r&eacute;alit&eacute;s du march&eacute; africain.</p>
+
+<nav>
+    <a href="#propos">À PROPOS</a>
+    <a href="#logiciels">LOGICIELS</a>
+    <a href="#download">TÉLÉCHARGEMENT</a>
+</nav>
+
+<header>
+    <h1>sKynEt Tech</h1>
+    <p>Propulsez votre entreprise vers l'excellence numérique</p>
+</header>
+
+<div class="container">
+    <section id="propos" class="hero">
+        <h2>À Propos de sKynEt Tech</h2>
+        <p>Solutions professionnelles développées pour répondre aux réalités du marché africain.</p>
+        <p>
+            sKynEt Tech est une entreprise spécialisée dans le développement de <strong>solutions logicielles robustes</strong> et sécurisées. 
+            Fort d'une expertise reconnue en <strong>WLangage (WinDev & WinDev Mobile)</strong>, nous concevons des outils capables de transformer la gestion quotidienne des sociétés de transport, de logistique et de paie.
+        </p>
+        <p>
+            Notre mission est simple : apporter une architecture numérique solide là où la performance et la sécurité sont prioritaires. 
+            Nos systèmes intègrent les dernières technologies de traçabilité, de protection anti-fraude et d'automatisation pour garantir votre tranquillité d'esprit.
+        </p>
     </section>
-    <div class="container" id="propos">
-        <h2 class="section-title">&Agrave; Propos ** sKynEt Tech</h2>
-        <div class="about-box">
-            <p><strong>sKynEt Tech</strong> est *** entreprise sp&eacute;cialis&eacute;e dans le d&eacute;veloppement ** solutions logicielles robustes et s&eacute;curis&eacute;es. Fort d&apos;une expertise ******** en <strong>WLangage (WinDev &amp; WinDev Mobile)</strong>, nous concevons des ****** ******** ** transformer ** ******* quotidienne *** soci&eacute;t&eacute;s de transport, de ********** et de paie.</p>
-            <p>***** mission est simple : apporter *** architecture num&eacute;rique ****** l&agrave; o&ugrave; la performance et ** s&eacute;curit&eacute; **** prioritaires. Nos syst&egrave;*** int&egrave;grent *** derni&egrave;res ************ ** tra&ccedil;abilit&eacute;, de protection anti-****** et d&apos;************** pour garantir votre tranquillit&eacute; d&apos;esprit.&nbsp; &nbsp;** suis saiid com</p>
-        </div>
-    </div>
-    <div class="container" id="logiciels">
-        <h2 class="section-title">Explications de nos Solutions</h2>
-        <div class="software-grid">
-            <div class="software-card">
-                <div class="card-content">
-                    <h3>Gestion de Courrier &amp; Colis</h3>
-                    <p>Une ******** hybride (PC/Mobile) **** ** contr&ocirc;le ***** de *** flux logistiques.</p>
-                    <ul class="features-list">
-                        <li><strong>Tra&ccedil;abilit&eacute; :</strong> Enregistrement et suivi pr&eacute;cis de chaque colis.</li>
-                        <li><strong>S&eacute;curit&eacute; :</strong> Validation *** retraits par codes OTP.</li>
-                        <li><strong>Impression :</strong> Support natif des imprimantes thermiques pour les re&ccedil;us.</li>
-                        <li><strong>Anti-Fraude :</strong> ************** unique *** appareil.</li>
-                    </ul><a href="#telechargement" class="btn-download">Voir la d&eacute;mo</a>
-                </div>
-            </div>
-            <div class="software-card">
-                <div class="card-content">
-                    <h3>Syst&egrave;me de Transport &amp; Flotte</h3>
-                    <p>Optimisez la rentabilit&eacute; de vos lignes de transport **** un outil ** ******* centralis&eacute;.</p>
-                    <ul class="features-list">
-                        <li><strong>R&eacute;servations :</strong> ******* des si&egrave;ges et planning *** d&eacute;parts.</li>
-                        <li><strong>Gestion ** Flotte :</strong> ***** technique et ************* des v&eacute;hicules.</li>
-                        <li><strong>Caisse :</strong> Centralisation *********** *** ******** journali&egrave;res.</li>
-                    </ul><a href="#telechargement" class="btn-download">Voir la d&eacute;mo</a>
-                </div>
-            </div>
-            <div class="software-card">
-                <div class="card-content">
-                    <h3>************** de ** Paie</h3>
-                    <p>Automatisez vos ressources humaines **** &eacute;viter *** erreurs de calcul.</p>
-                    <ul class="features-list">
-                        <li><strong>************** :</strong> Calcul rapide des ******** et cotisations.</li>
-                        <li><strong>Conformit&eacute; :</strong> G&eacute;n&eacute;ration ** fiches de **** professionnelles.</li>
-                        <li><strong>** :</strong> Suivi *** absences ** du personnel.</li>
-                    </ul><a href="#telechargement" class="btn-download">Voir ** d&eacute;mo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="telechargement" style="text-align: center; background: #eee; border-radius: 15px;">
-        <h2 class="section-title">****** T&eacute;l&eacute;chargement</h2>
-        <p>Acc&eacute;dez *** versions ** d&eacute;monstration de nos ******** (APK pour Android et ex&eacute;******** Windows).</p>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
-            <div style="background: white; padding: 20px; border-radius: 8px; width: 250px;">
-                <h4>Version ****** (.APK)</h4>
-                <p style="font-size: 0.8rem;">******* Courrier &amp; Colis</p><a href="#" class="btn-download" style="background: #2ecc71;">T&eacute;l&eacute;charger</a>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: 8px; width: 250px;">
-                <h4>Version ** (.EXE)</h4>
-                <p style="font-size: 0.8rem;">***** ****** Gestion</p><a href="#" class="btn-download" style="background: #2ecc71;">T&eacute;l&eacute;charger</a>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2026 sKynEt **** - Solutions D&eacute;velopp&eacute;es par un ****** pour *** Experts.</p>
-        <p>Abidjan, C&ocirc;te d&apos;Ivoire | ******* : +225 0103011008</p>
-    </footer>
 
-<div style="color: red; font-size: 12px; width: 600px; margin: 0 auto; text-align: center;">Essai de Word &agrave; HTML - Veuillez passer &agrave; <a href="https://wordtohtml.net/site/payment">PRO</a>.</div>
+    <h2 id="logiciels" style="text-align:center;">Nos Solutions</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Gestion de Courrier & Colis</h3>
+            <p>Une solution complète (PC/Mobile) pour un contrôle total de vos flux logistiques.</p>
+            <ul>
+                <li><strong>Traçabilité :</strong> Enregistrement et suivi précis de chaque colis.</li>
+                <li><strong>Sécurité :</strong> Validation des retraits par codes OTP.</li>
+                <li><strong>Impression :</strong> Support natif des imprimantes thermiques.</li>
+                <li><strong>Anti-Fraude :</strong> Identification unique par appareil.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Système de Transport & Flotte</h3>
+            <p>Optimisez la rentabilité de vos lignes de transport avec un outil de gestion centralisé.</p>
+            <ul>
+                <li><strong>Réservations :</strong> Gestion des sièges et planning des départs.</li>
+                <li><strong>Gestion de Flotte :</strong> Suivi technique et maintenance des véhicules.</li>
+                <li><strong>Caisse :</strong> Comptabilisation automatique des recettes.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Administration de la Paie</h3>
+            <p>Automatisez vos ressources humaines pour éviter les erreurs de calcul.</p>
+            <ul>
+                <li><strong>Automatisation :</strong> Calcul précis des salaires et cotisations.</li>
+                <li><strong>Conformité :</strong> Génération de bulletins de paie professionnels.</li>
+                <li><strong>RH :</strong> Suivi des absences et du personnel.</li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="download" class="download-section">
+        <h2>Espace Téléchargement</h2>
+        <p>Accédez aux versions de démonstration de nos produits (APK pour Android et exécutables Windows).</p>
+        <div class="grid">
+            <div class="card">
+                <h4>Version Mobile (.APK)</h4>
+                <p>Gestion Courrier & Colis</p>
+                <a href="#" class="btn">Télécharger APK</a>
+            </div>
+            <div class="card">
+                <h4>Version PC (.EXE)</h4>
+                <p>Gestion de Paie</p>
+                <a href="#" class="btn">Télécharger EXE</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 sKynEt Tech - Solutions Développées par un Expert pour les Experts.</p>
+    <p>Abidjan, Côte d'Ivoire | Contact : +225 0103011008</p>
+</footer>
+
 </body>
-
 </html>

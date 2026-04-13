@@ -22,7 +22,7 @@
             background: radial-gradient(at 0% 0%, rgba(0, 74, 153, 0.1) 0px, transparent 50%), #f1f5f9;
             background-attachment: fixed;
             color: var(--dark);
-            font-size: 14px; /* Taille de texte réduite pour mobile */
+            font-size: 14px;
         }
 
         nav {
@@ -70,20 +70,31 @@
             gap: 20px;
         }
 
+        /* --- MODIFICATION DE LA CARTE --- */
         .card {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 0 25px 0; /* On enlève le padding du haut pour l'image */
             border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.5);
             transition: 0.3s;
+            overflow: hidden; /* Important pour que l'image ne dépasse pas des coins arrondis */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        /* --- STYLE POUR L'IMAGE DE LA CARTE (CORRECTION TAILLE) --- */
+        .card-img {
+            width: 100%;
+            height: 160px; /* On fixe une hauteur raisonnable */
+            object-fit: cover; /* L'image remplit le cadre sans se déformer */
+            margin-bottom: 15px;
+        }
 
-        .card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 12px; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
-        .card p { font-size: 0.85rem; line-height: 1.4; color: #475569; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .card i { font-size: 2.2rem; color: var(--accent); margin-top: 25px; margin-bottom: 12px; display: inline-block; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 8px; padding: 0 15px; }
+        .card p { font-size: 0.85rem; line-height: 1.4; color: #475569; padding: 0 15px; }
 
         .btn {
             display: inline-block;
@@ -108,7 +119,6 @@
             font-size: 0.8rem;
         }
 
-        /* Responsive spécifique */
         @media (max-width: 480px) {
             header h1 { font-size: 1.7rem; }
             .section-title { font-size: 1.3rem; }
@@ -119,7 +129,6 @@
 
 <nav>
     <a href="index.html" class="logo">sKynEt Tech</a>
-     <a href="index.html" class="logo">A propore</a>
     <div style="font-size: 0.75rem; font-weight: 600; color: var(--primary);">Expert WinDev</div>
 </nav>
 

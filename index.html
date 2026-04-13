@@ -70,42 +70,42 @@
             gap: 20px;
         }
 
-        /* --- MODIFICATION DE LA CARTE --- */
         .card {
             background: rgba(255, 255, 255, 0.95);
-            padding: 0 0 25px 0; /* On enlève le padding du haut pour l'image */
+            padding: 0 0 25px 0;
             border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.5);
             transition: 0.3s;
-            overflow: hidden; /* Important pour que l'image ne dépasse pas des coins arrondis */
+            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* --- STYLE POUR L'IMAGE DE LA CARTE (CORRECTION TAILLE) --- */
+        /* --- TAILLE DE L'IMAGE DANS LA CARTE --- */
         .card-img {
             width: 100%;
-            height: 170px; /* On fixe une hauteur raisonnable */
-            object-fit: cover; /* L'image remplit le cadre sans se déformer */
-            margin-bottom: 15px;
+            height: 120px; /* On fixe une hauteur raisonnable pour que l'image ne soit pas trop grande */
+            object-fit: cover; /* L'image remplit le cadre sans se déformer (elle se recadre toute seule) */
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
 
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        .card i { font-size: 2.2rem; color: var(--accent); margin-top: 25px; margin-bottom: 12px; display: inline-block; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 8px; padding: 0 15px; }
+        .card i { font-size: 2.2rem; color: var(--accent); margin-top: 20px; margin-bottom: 10px; display: inline-block; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 6px; padding: 0 15px; }
         .card p { font-size: 0.85rem; line-height: 1.4; color: #475569; padding: 0 15px; }
 
         .btn {
             display: inline-block;
             background: var(--primary);
             color: white;
-            padding: 10px 20px;
+            padding: 9px 18px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.8rem;
-            margin-top: 15px;
+            font-size: 0.75rem;
+            margin-top: 12px;
             transition: 0.3s;
         }
 

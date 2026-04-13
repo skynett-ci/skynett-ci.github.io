@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Paie | sKynEt Tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #004a99; --accent: #2ecc71; --dark: #0f172a; }
+        body { font-family: 'Poppins', sans-serif; background: #f1f5f9; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
+        
+        .container { max-width: 650px; margin: 20px auto; background: white; padding: 30px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 6px solid var(--primary); }
+        
+        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .back-btn:hover { transform: translateX(-5px); }
+
+        .header-section { text-align: center; margin-bottom: 30px; }
+        .header-section i { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; }
+        h1 { color: var(--dark); font-size: 1.8rem; margin: 0; }
+        .badge { background: #eef2ff; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-top: 10px; display: inline-block; }
+
+        .description { font-size: 0.95rem; color: #475569; margin-bottom: 25px; text-align: center; }
+
+        .features-list { background: #f8fafc; padding: 20px; border-radius: 15px; margin-bottom: 30px; }
+        .features-list h3 { font-size: 1.1rem; margin-top: 0; color: var(--dark); }
+        .features-list ul { padding: 0; list-style: none; }
+        .features-list li { margin-bottom: 12px; font-size: 0.9rem; display: flex; align-items: center; }
+        .features-list i { color: var(--accent); margin-right: 12px; font-size: 1rem; }
+
+        .btn-download { 
+            display: block; 
+            text-align: center; 
+            background: var(--primary); 
+            color: white; 
+            padding: 16px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 74, 153, 0.2);
+        }
+        .btn-download:hover { background: var(--dark); transform: translateY(-3px); }
+
+        footer { text-align: center; margin-top: 25px; font-size: 0.8rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Retour à l'accueil</a>
+    
+    <div class="header-section">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h1>Gestion de Paie Pro</h1>
+        <div class="badge">Solution WinDev Desktop</div>
+    </div>
+
+    <p class="description">
+        Automatisez la gestion de vos ressources humaines avec une solution fiable, précise et conforme aux normes en vigueur en Côte d'Ivoire.
+    </p>
+
+    <div class="features-list">
+        <h3>Fonctionnalités incluses :</h3>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Calcul automatique des salaires, primes et indemnités.</li>
+            <li><i class="fas fa-check-circle"></i> Génération automatique des bulletins de paie (PDF).</li>
+            <li><i class="fas fa-check-circle"></i> Gestion des cotisations sociales (CNPS) et fiscales.</li>
+            <li><i class="fas fa-check-circle"></i> Suivi des congés, absences et heures supplémentaires.</li>
+            <li><i class="fas fa-check-circle"></i> Archivage sécurisé des données du personnel.</li>
+        </ul>
+    </div>
+
+    <a href="https://wa.me/2250103011008" class="btn-download" target="_blank">
+        <i class="fas fa-laptop-code"></i> DEMANDER UNE DÉMONSTRATION
+    </a>
+
+    <footer>
+        Développé avec expertise par sKynEt Tech &copy; 2026
+    </footer>
+</div>
+
+</body>
+</html>

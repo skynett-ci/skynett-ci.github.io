@@ -3,35 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion de Colis | sKynEt Tech</title>
+    <title>Offre Colis | sKynEt Tech</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Poppins', sans-serif; background: #f1f5f9; color: #0f172a; margin: 0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 600px; margin: 20px auto; background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { color: #004a99; font-size: 1.5rem; margin-bottom: 15px; }
+        :root { --primary: #004a99; --accent: #e67e22; --success: #2ecc71; --dark: #0f172a; }
+        body { font-family: 'Poppins', sans-serif; background: #f1f5f9; color: var(--dark); margin: 0; padding: 15px; line-height: 1.6; }
         
-        /* Style du bouton de téléchargement avec animation */
+        .container { max-width: 650px; margin: 10px auto; background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        /* En-tête */
+        header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; }
+        .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: var(--primary); font-size: 0.9rem; font-weight: 600; }
+        h1 { color: var(--primary); font-size: 1.6rem; margin: 10px 0 5px; }
+        .subtitle { font-size: 0.95rem; color: var(--accent); font-weight: 600; }
+
+        /* Badges et Sections */
+        .info-badge { background: #eef2ff; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .section-title { background: var(--primary); color: white; padding: 10px 15px; border-radius: 12px; font-size: 1rem; margin-top: 25px; font-weight: 600; display: flex; align-items: center; }
+        .section-title i { margin-right: 10px; }
+
+        /* Blocs de contenu */
+        .item { background: #f8fafc; padding: 15px; border-radius: 12px; margin-top: 10px; border-left: 4px solid var(--accent); }
+        .item h4 { margin: 0 0 5px 0; color: var(--dark); font-size: 1rem; }
+        .price-tag { color: var(--success); font-weight: 700; font-size: 0.95rem; }
+
+        .promo-box { background: #fff4e6; border: 2px dashed var(--accent); padding: 20px; border-radius: 15px; margin-top: 25px; text-align: center; }
+        .promo-box h3 { color: var(--accent); margin: 0 0 10px; }
+
+        .expert-note { font-style: italic; background: #eef2ff; padding: 20px; border-radius: 15px; margin-top: 25px; border-left: 4px solid var(--primary); font-size: 0.95rem; }
+
+        /* Bouton */
         .btn-download { 
             display: block; 
             text-align: center; 
-            background: #2ecc71; 
+            background: var(--success); 
             color: white; 
-            padding: 15px; 
+            padding: 16px; 
             text-decoration: none; 
             border-radius: 50px; 
             font-weight: bold; 
-            margin-top: 25px; 
+            margin-top: 30px; 
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
         }
-        .btn-download:hover { 
-            background: #27ae60; 
-            transform: scale(1.02); 
-        }
-
-        .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: #004a99; font-size: 0.9rem; font-weight: 600; }
-        .info-badge { background: #eef2ff; color: #004a99; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .btn-download:hover { background: #27ae60; transform: scale(1.02); }
     </style>
 </head>
 <body>
@@ -39,24 +55,56 @@
 <div class="container">
     <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Retour au site</a>
     
-    <br>
-    <div class="info-badge">Version Mobile v1.0</div>
-    <h1>Gestion de Colis & Courrier</h1>
-    
-    <p>Solution professionnelle développée par <strong>sKynEt Tech</strong> pour WinDev Mobile.</p>
+    <header>
+        <div class="info-badge">Version Mobile v1.0</div>
+        <h1>sKynEt Tech</h1>
+        <div class="subtitle">Solutions de Transport Modernes</div>
+        <p style="font-size: 0.85rem; opacity: 0.8;">L'expertise du terrain au service de votre rentabilité</p>
+    </header>
 
-    <ul style="padding-left: 20px; font-size: 0.9rem; color: #475569;">
-        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color:#2ecc71; margin-right:8px;"></i> Traçabilité des envois en temps réel.</li>
-        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color:#2ecc71; margin-right:8px;"></i> Validation sécurisée par code OTP.</li>
-        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color:#2ecc71; margin-right:8px;"></i> Impression thermique Bluetooth (Bordereaux).</li>
+    <div style="text-align: center; font-weight: 700; color: var(--primary); margin-bottom: 20px;">
+        📋 OFFRE DE MODERNISATION : GESTION DE COURRIER & COLIS
+        <p style="font-weight: 400; font-size: 0.85rem; color: #64748b;">Spécialement conçu pour les lignes interurbaines (Abidjan, Odienné, Nord CI)</p>
+    </div>
+
+    <div class="section-title"><i class="fas fa-mobile-alt"></i> 1. VOTRE "KIT DE SÉCURITÉ"</div>
+    <p style="font-size: 0.85rem; margin: 10px 0 0 5px;">Investissement unique pour votre agence :</p>
+    
+    <div class="item">
+        <h4>Smartphone de Gestion</h4>
+        <p style="font-size: 0.85rem; margin: 0;">Modèle Android (Itel/Samsung/Xiaomi) avec batterie longue durée.</p>
+        <span class="price-tag">40 000 F — 55 000 F CFA</span>
+    </div>
+    <div class="item">
+        <h4>Imprimante Thermique Bluetooth</h4>
+        <p style="font-size: 0.85rem; margin: 0;">Format 58mm, portable et sans encre.</p>
+        <span class="price-tag">25 000 F — 35 000 F CFA</span>
+    </div>
+
+    <div class="section-title"><i class="fas fa-tools"></i> 2. LA PRESTATION sKynEt Tech</div>
+    <ul style="font-size: 0.9rem; margin-top: 15px; padding-left: 20px; color: #475569;">
+        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <strong>Installation :</strong> Configuration de vos lignes et tarifs.</li>
+        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> <strong>Formation Terrain :</strong> Accompagnement des caissiers (48h).</li>
+        <li><i class="fas fa-check-circle" style="color: var(--success);"></i> <strong>Maintenance :</strong> Assistance technique et mises à jour.</li>
     </ul>
 
+    <div class="promo-box">
+        <h3>🎁 ESSAI GRATUIT : 10 JOURS</h3>
+        <p style="font-size: 0.9rem; margin: 0;">Utilisation totale sans frais de licence. <strong>Zéro engagement.</strong></p>
+        <div style="font-weight: 700; color: var(--primary); font-size: 1.1rem; margin-top: 10px;">Abonnement : 25 000 F / mois</div>
+    </div>
+
+    <div class="expert-note">
+        <strong>💡 POURQUOI CHOISIR sKynEt Tech ?</strong><br>
+        "Chaque colis perdu est une perte d'argent. Mon logiciel automatise tout : de l'enregistrement à la caisse. Plus d'erreurs, plus de doutes."
+    </div>
+
     <a href="https://mega.nz/file/zZlDHaYB#BGyQ-8zuDfXTVUy-tAACHNdhre2jAM2pF5xj1V2G7Y4" class="btn-download" target="_blank">
-        <i class="fas fa-download"></i> TÉLÉCHARGER L'APPLICATION (.APK)
+        <i class="fas fa-download"></i> TESTER GRATUITEMENT (.APK)
     </a>
 
-    <p style="text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 20px;">
-        Hébergé sur Mega.nz pour un téléchargement sécurisé.
+    <p style="text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 25px;">
+        © 2026 sKynEt Tech - Solutions Développées par un Expert.
     </p>
 </div>
 

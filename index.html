@@ -7,18 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #004a99; --accent: #e67e22; --dark: #0f172a; --light: #f8fafc; }
+        :root { --primary: #004a99; --accent: #e67e22; --dark: #0f172a; --light: #f8fafc; --success: #27ae60; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { font-family: 'Poppins', sans-serif; background: #f1f5f9; color: var(--dark); line-height: 1.6; }
         
-        /* Navigation Moderne */
+        /* Navigation */
         nav { background: white; padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
         .logo-text { font-size: 1.4rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
         .contact-top { font-weight: 600; color: var(--accent); font-size: 0.9rem; }
 
-        /* Header avec Gradient Dynamique */
+        /* Header */
         header { 
             padding: 80px 5% 140px; 
             text-align: center; 
@@ -26,40 +26,19 @@
             color: white; 
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
-        header h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; letter-spacing: -1px; }
-        header p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        header h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 700; }
 
-        /* Container & Image Principale */
-        .container { max-width: 1140px; margin: -100px auto 0; padding: 0 20px 80px; }
+        /* Container & Grid */
+        .container { max-width: 1140px; margin: -100px auto 0; padding: 0 20px 40px; }
         .hero-img-wrapper { position: relative; border-radius: 25px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); background: white; padding: 8px; margin-bottom: 60px; }
         .main-img { width: 100%; border-radius: 20px; display: block; }
 
-        .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { color: var(--primary); font-size: 2rem; position: relative; display: inline-block; padding-bottom: 10px; }
-        .section-title h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
-
-        /* Grille des Solutions */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .card { 
-            background: white; 
-            padding: 40px 30px; 
-            border-radius: 24px; 
-            text-align: center; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03); 
-            border: 1px solid #edf2f7;
-            position: relative;
-            overflow: hidden;
-        }
-        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--primary); }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary); opacity: 0; transition: 0.3s; }
-        .card:hover::before { opacity: 1; }
-
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .card { background: white; padding: 40px 30px; border-radius: 24px; text-align: center; transition: 0.4s; border: 1px solid #edf2f7; }
+        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; display: block; }
-        .card h3 { margin-bottom: 15px; font-size: 1.4rem; color: var(--dark); }
-        .card p { color: #64748b; font-size: 0.95rem; margin-bottom: 25px; }
-        
+
+        /* Boutons */
         .btn { 
             display: inline-block; 
             background: var(--primary); 
@@ -70,39 +49,95 @@
             font-weight: 600; 
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(0, 74, 153, 0.3);
+            border: none;
+            cursor: pointer;
         }
-        .btn:hover { background: var(--accent); transform: scale(1.05); box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4); }
+        .btn:hover { background: var(--accent); transform: scale(1.05); }
 
-        /* Section "Pourquoi Nous" */
-        .why-us { background: white; padding: 60px 5%; margin-top: 40px; border-radius: 30px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-        .feature { display: flex; align-items: center; gap: 15px; min-width: 250px; }
-        .feature i { background: #eef2ff; color: var(--primary); padding: 15px; border-radius: 15px; font-size: 1.2rem; }
-        .feature-text b { display: block; font-size: 1rem; }
-        .feature-text span { font-size: 0.85rem; color: #64748b; }
+        /* BOUTON GRISÉ (Indisponible) */
+        .btn-disabled {
+            background: #cbd5e1 !important;
+            color: #64748b !important;
+            cursor: not-allowed !important;
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
+        /* Encadré Assistance (Avis après téléchargement) */
+        .notice-box {
+            background: white;
+            border-left: 6px solid var(--accent);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .notice-box i { font-size: 2rem; color: var(--accent); }
+        .notice-text h4 { color: var(--primary); margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        .notice-text p { font-size: 0.95rem; color: #475569; font-weight: 500; }
+
+        /* BOUTON FLOTTANT ASSISTANCE */
+        .btn-floating {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--success);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.4);
+            text-decoration: none;
+            z-index: 9999;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+        .btn-floating:hover { transform: scale(1.1); background: var(--primary); }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+
+        /* Pourquoi Nous */
+        .why-us { background: white; padding: 40px; border-radius: 30px; display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
+        .feature { display: flex; align-items: center; gap: 15px; }
+        .feature i { background: #eef2ff; color: var(--primary); padding: 12px; border-radius: 12px; }
 
         footer { background: var(--dark); color: white; padding: 60px 5% 30px; text-align: center; }
         .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; display: block; }
-        .sep { width: 50px; height: 2px; background: var(--accent); margin: 20px auto; }
-        .copy { opacity: 0.6; font-size: 0.85rem; }
 
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
-            .container { margin-top: -60px; }
+            .btn-floating { width: 60px; height: 60px; bottom: 20px; right: 20px; }
+            .notice-box { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
+<a href="https://wa.me/225XXXXXXXX" class="btn-floating" title="Assistance Rapide">
+    <i class="fas fa-headset"></i>
+</a>
+
 <nav>
     <a href="index.html" class="logo">
         <span class="logo-text">sKynEt Tech</span>
     </a>
-    <div class="contact-top"><i class="fas fa-phone-alt"></i> Abidjan, CI</div>
+    <div class="contact-top"><i class="fas fa-phone-alt"></i> Côte d'Ivoire</div>
 </nav>
 
 <header>
     <h1>Expertise WLangage & Digital</h1>
-    <p>Nous concevons des logiciels puissants pour propulser la rentabilité de votre entreprise.</p>
+    <p>Des solutions logicielles sur-mesure pour booster votre productivité.</p>
 </header>
 
 <div class="container">
@@ -111,21 +146,12 @@
     </div>
 
     <div class="why-us">
-        <div class="feature">
-            <i class="fas fa-shield-alt"></i>
-            <div class="feature-text"><b>Sécurisé</b><span>Protection des données</span></div>
-        </div>
-        <div class="feature">
-            <i class="fas fa-bolt"></i>
-            <div class="feature-text"><b>Rapide</b><span>Optimisé pour le terrain</span></div>
-        </div>
-        <div class="feature">
-            <i class="fas fa-headset"></i>
-            <div class="feature-text"><b>Support 24/7</b><span>Assistance technique</span></div>
-        </div>
+        <div class="feature"><i class="fas fa-shield-alt"></i> <b>Sécurisé</b></div>
+        <div class="feature"><i class="fas fa-bolt"></i> <b>Rapide</b></div>
+        <div class="feature"><i class="fas fa-headset"></i> <b>Support 24/7</b></div>
     </div>
 
-    <div class="section-title" style="margin-top: 80px;">
+    <div class="section-title">
         <h2>Nos Solutions Métiers</h2>
     </div>
 
@@ -133,31 +159,38 @@
         <div class="card">
             <i class="fas fa-box-open"></i>
             <h3>Gestion de Colis</h3>
-            <p>Traçabilité complète, notifications SMS et sécurisation des retraits par code OTP unique.</p>
+            <p>Traçabilité complète et sécurisation des retraits par code OTP unique.</p>
             <a href="colis.html" class="btn">Découvrir l'offre</a>
         </div>
 
-        <div class="card">
-            <i class="fas fa-bus-alt"></i>
+        <div class="card" style="opacity: 0.8;">
+            <i class="fas fa-bus-alt" style="color: #94a3b8;"></i>
             <h3>Gestion de Transport</h3>
-            <p>Vente de tickets, gestion des manifests de départ et suivi de votre flotte interurbaine.</p>
-            <a href="" class="btn">Bientôt Disponible </a>
+            <p>Billetterie, départs et suivi de flotte interurbaine en temps réel.</p>
+            <a href="javascript:void(0)" class="btn btn-disabled">Bientôt Disponible</a>
         </div>
 
         <div class="card">
             <i class="fas fa-file-invoice-dollar"></i>
             <h3>Gestion de Paie</h3>
-            <p>Calcul automatique des salaires, génération des bulletins et conformité aux normes sociales.</p>
+            <p>Calcul automatique et conformité aux normes sociales en vigueur.</p>
             <a href="paie.html" class="btn">Découvrir l'offre</a>
+        </div>
+    </div>
+
+    <div class="notice-box">
+        <i class="fas fa-info-circle"></i>
+        <div class="notice-text">
+            <h4>Note Importante</h4>
+            <p>Après le téléchargement de votre logiciel, veuillez contacter votre assistance pour la configuration personnalisée. <b>L'assistance est totalement gratuite.</b></p>
         </div>
     </div>
 </div>
 
 <footer>
     <span class="footer-logo">sKynEt Tech</span>
-    <p>Précision Technologique au service du Transport et de l'Entreprise.</p>
-    <div class="sep"></div>
-    <p class="copy">© 2026 sKynEt Tech | Créateur de solutions innovantes | Côte d'Ivoire</p>
+    <p>Précision Technologique au service de votre Business.</p>
+    <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 20px;">© 2026 sKynEt Tech | Côte d'Ivoire</p>
 </footer>
 
 </body>

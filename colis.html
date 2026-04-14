@@ -11,7 +11,6 @@
         
         body { 
             font-family: 'Poppins', sans-serif; 
-            /* Ajout de l'image de fond */
             background: linear-gradient(rgba(241, 245, 249, 0.9), rgba(241, 245, 249, 0.9)), url('BACKGROUD.png');
             background-size: cover;
             background-position: center;
@@ -22,7 +21,6 @@
             line-height: 1.6; 
         }
         
-        /* On rend le container légèrement transparent pour voir le fond derrière */
         .container { 
             max-width: 650px; 
             margin: 10px auto; 
@@ -30,16 +28,40 @@
             padding: 25px; 
             border-radius: 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            backdrop-filter: blur(5px); /* Effet de flou moderne */
+            backdrop-filter: blur(5px);
+            border-top: 6px solid var(--primary);
         }
         
         header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; }
+        
+        /* --- STYLE POUR L'IMAGE GRAND FORMAT --- */
+        .main-banner { 
+            width: 100%; 
+            height: auto; 
+            max-height: 280px; 
+            object-fit: cover; 
+            border-radius: 15px; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
         .back { display: inline-block; margin-bottom: 15px; text-decoration: none; color: var(--primary); font-size: 0.9rem; font-weight: 600; }
         h1 { color: var(--primary); font-size: 1.6rem; margin: 10px 0 5px; }
         .subtitle { font-size: 0.95rem; color: var(--accent); font-weight: 600; }
 
-        .section-title { background: var(--primary); color: white; padding: 10px 15px; border-radius: 12px; font-size: 1rem; margin-top: 25px; font-weight: 600; display: flex; align-items: center; }
-        .section-title i { margin-right: 10px; }
+        .section-title { 
+            background: var(--primary); 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 12px; 
+            font-size: 1rem; 
+            margin-top: 25px; 
+            font-weight: 600; 
+            display: flex; 
+            align-items: center; 
+        }
+        .section-title img { height: 24px; margin-right: 10px; filter: brightness(0) invert(1); /* Pour mettre l'icône en blanc dans le titre bleu */ }
 
         .item { background: #f8fafc; padding: 15px; border-radius: 12px; margin-top: 10px; border-left: 4px solid var(--accent); }
         .item h4 { margin: 0 0 5px 0; color: var(--dark); font-size: 1rem; }
@@ -72,9 +94,10 @@
 <body>
 
 <div class="container">
-    <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Retour au site</a>
+    <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Accueil</a>
     
     <header>
+        <img src="colisimg.png" alt="Gestion de Colis Skynet" class="main-banner">
         <h1>Skynet Tech</h1>
         <div class="subtitle">Solutions de Transport Modernes</div>
         <p style="font-size: 0.85rem; opacity: 0.8;">L'expertise du terrain au service de votre rentabilité</p>
@@ -85,7 +108,9 @@
         <p style="font-weight: 400; font-size: 0.85rem; color: #64748b;">Spécialement conçu pour les lignes interurbaines</p>
     </div>
 
-    <div class="section-title"><i class="fas fa-mobile-alt"></i> 1. VOTRE KIT DE SÉCURITÉ (MATÉRIEL)</div>
+    <div class="section-title">
+        <img src="colisimg.png" alt="icône"> 1. VOTRE KIT DE SÉCURITÉ (MATÉRIEL)
+    </div>
     <p style="font-size: 0.85rem; margin: 10px 0 0 5px;">Investissement unique pour votre agence :</p>
     
     <div class="item">
@@ -100,7 +125,9 @@
     </div>
     <p style="font-size: 0.85rem; margin-top: 5px; color: #64748b;">Consommables : Rouleaux de papier thermique (env. 500 F l'unité).</p>
 
-    <div class="section-title"><i class="fas fa-tools"></i> 2. NOS PRESTATIONS</div>
+    <div class="section-title">
+        <img src="colisimg.png" alt="icône"> 2. NOS PRESTATIONS
+    </div>
     <ul style="font-size: 0.9rem; margin-top: 15px; padding-left: 20px; color: #475569;">
         <li style="margin-bottom: 12px;"><strong>Installation & Paramétrage :</strong> Configuration de vos lignes. Chaque colis a un code généré et accès agents.</li>
         <li style="margin-bottom: 12px;"><strong>Formation Terrain :</strong> Accompagnement de vos caissiers pendant 24h.</li>
@@ -119,7 +146,9 @@
         "En tant que professionnel du transport, je sais que chaque colis égaré est une perte d'argent et de crédibilité. C’est pourquoi j’ai conçu une solution qui sécurise votre activité."
     </div>
 
-    <div class="section-title"><i class="fas fa-star"></i> VOS AVANTAGES QUOTIDIENS</div>
+    <div class="section-title">
+        <img src="colisimg.png" alt="icône"> VOS AVANTAGES QUOTIDIENS
+    </div>
     
     <div class="advantage-card">
         <i class="fas fa-calculator"></i> <strong>Calcul automatique des recettes :</strong> Suivez vos revenus en temps réel sans risque d'erreur humaine.

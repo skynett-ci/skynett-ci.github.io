@@ -8,118 +8,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary: #004a99; --accent: #e67e22; --dark: #0f172a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f1f5f9; color: var(--dark); font-size: 14px; }
         
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            /* Retour à l'image avec la petite voiture */
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('BACKGROUD.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white; 
-            margin: 0; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
+        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); text-decoration: none; }
 
-        .main-card {
-            width: 90%;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 40px 20px;
-            border-radius: 30px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
+        header { padding: 60px 5% 100px; text-align: center; background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; clip-path: ellipse(150% 100% at 50% 0%); }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
 
-        .logo-container img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-        }
+        .container { max-width: 1100px; margin: -60px auto 0; padding: 0 15px 50px; }
+        .main-img { width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 5px solid white; margin-bottom: 40px; }
 
-        h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 700; }
-        p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 30px; }
+        .section-title { text-align: center; margin-bottom: 30px; color: var(--primary); font-size: 1.6rem; }
+        
+        /* Grille des logiciels */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .card { background: white; padding: 30px; border-radius: 20px; text-align: center; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 15px; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        .menu-item {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--dark);
-            padding: 18px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .menu-item i {
-            font-size: 1.4rem;
-            margin-right: 15px;
-            color: var(--primary);
-        }
-
-        .menu-item:hover {
-            transform: translateY(-3px);
-            background: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .menu-item span { margin-left: auto; font-size: 0.8rem; color: #64748b; }
-
-        footer {
-            margin-top: 40px;
-            font-size: 0.75rem;
-            opacity: 0.7;
-        }
+        footer { background: var(--dark); color: white; padding: 40px 5%; text-align: center; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-<div class="main-card">
-    <div class="logo-container">
-        <img src="LOGOSKYNET.png" alt="sKynEt Tech Logo">
-    </div>
+<nav>
+    <a href="index.html" class="logo">sKynEt Tech</a>
+    <div style="font-weight: 600; color: var(--primary); font-size: 0.8rem;">CI - 0103011008</div>
+</nav>
 
-    <h1>sKynEt Tech</h1>
-    <p>Précision Technologique au service de votre Business</p>
+<header>
+    <h1>Expertise WLangage</h1>
+    <p>Solutions WinDev & WinDev Mobile sur-mesure</p>
+</header>
 
-    <div class="menu-grid">
-        <a href="paie.html" class="menu-item">
-            <i class="fas fa-file-invoice-dollar"></i>
-            Gestion de Paie
-            <span>Desktop</span>
-        </a>
+<div class="container">
+    <img src="imageskynet.jpeg" alt="Logo sKynEt Tech" class="main-img">
 
-        <a href="colis.html" class="menu-item">
-            <i class="fas fa-box-open"></i>
-            Gestion de Colis
-            <span>Android</span>
-        </a>
+    <h2 class="section-title">Nos Solutions Logiciels</h2>
 
-        <a href="#" class="menu-item" style="opacity: 0.6; cursor: not-allowed;">
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-box"></i>
+            <h3>Gestion de Colis</h3>
+            <p>Traçabilité complète des envois et sécurisation des retraits par OTP.</p>
+            <a href="colis.html" class="btn">Voir les Détails</a>
+        </div>
+
+        <div class="card">
             <i class="fas fa-bus"></i>
-            Gestion Transport
-            <span>Bientôt</span>
-        </a>
-    </div>
+            <h3>Gestion de Transport</h3>
+            <p>Billetterie, gestion des départs et suivi de flotte en temps réel.</p>
+            <a href="transport.html" class="btn">Voir les Détails</a>
+        </div>
 
-    <footer>
-        &copy; 2026 sKynEt Tech - Côte d'Ivoire
-    </footer>
+        <div class="card">
+            <i class="fas fa-wallet"></i>
+            <h3>Gestion de Paie</h3>
+            <p>Calcul automatique des salaires et gestion des ressources humaines.</p>
+            <a href="paie.html" class="btn">Voir les Détails</a>
+        </div>
+    </div>
 </div>
+
+<footer>
+    <p>© 2026 sKynEt Tech | Abidjan, Côte d'Ivoire</p>
+</footer>
 
 </body>
 </html>

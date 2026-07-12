@@ -49,17 +49,16 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: login.php"); 
 </div>
 
 <div class="tabs">
-    <div class="tab">Recettes</div>
-    <div class="tab">Dépenses</div>
     <div class="tab active">Point Courrier</div>
 </div>
 
 <div class="content">
     <h3>Point des recettes courrier</h3>
     <form method="post">
-        Période du <input type="date" name="debut"> au <input type="date" name="fin">
-        <button type="submit">Soumettre</button>
-    </form>
+    Période du <input type="date" name="debut" value="<?php echo date('Y-m-d'); ?>"> 
+    au <input type="date" name="fin" value="<?php echo date('Y-m-d'); ?>">
+    <button type="submit">Soumettre</button>
+</form>
 
     <table>
         <thead>

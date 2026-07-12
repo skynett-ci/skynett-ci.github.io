@@ -87,7 +87,7 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: login.php"); 
                 $i++;
             }
             ?>
-            <tr class="total-row"><td colspan="2" style="text-align:right;">Totaux</td><td>0 C</td></tr>
+            <tr class="total-row"><td colspan="2" style="text-align:right;">Totaux</td><td>0 F CFA</td></tr>
         </tbody>
     </table>
 </div>

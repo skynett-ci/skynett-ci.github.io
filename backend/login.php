@@ -2,11 +2,11 @@
 session_start();
 $compagnies = [
     "AMT" => ["mdp" => "amt2026", "gares" => ["ADJAME", "ODIENE", "BOUAKE", "ABOBO", "SIANSOBA"]],
-    "SKYNET TECH" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]]
+    "SKYNET" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]]
 ];
 
 if (isset($_POST['login'])) {
-    $comp = $_POST['compagnie'];
+    $comp = strtoupper(trim($_POST['compagnie'])); // On met en majuscule et on nettoie les espaces
     if (isset($compagnies[$comp]) && $compagnies[$comp]['mdp'] == $_POST['mdp']) {
         $_SESSION['compagnie'] = $comp;
         header("Location: admin.php");
@@ -16,6 +16,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+<!-- ... (le reste du HTML reste identique) ... -->
 <!DOCTYPE html>
 <html>
 <head>

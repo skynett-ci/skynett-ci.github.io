@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Vos compagnies
+// --- CONFIGURATION DES COMPAGNIES ---
 $compagnies = [
     "AMT" => ["mdp" => "amt2026", "gares" => ["ADJAME", "ODIENE", "BOUAKE"]],
     "SKYNET" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]]
@@ -21,12 +21,13 @@ if (isset($_POST['login'])) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Connexion sKynEt Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connexion - sKynEt Tech</title>
     <style>
         body { font-family: sans-serif; background: #f0f0f0; display: flex; justify-content: center; padding-top: 50px; }
         .box { background: white; padding: 20px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #0056b3; color: white; border: none; }
+        button { width: 100%; padding: 10px; background: #0056b3; color: white; border: none; cursor: pointer; }
     </style>
 </head>
 <body>

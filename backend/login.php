@@ -2,9 +2,8 @@
 session_start();
 $compagnies = [
     "AMT" => ["mdp" => "amt2026", "gares" => ["ADJAME", "ODIENE", "BOUAKE", "ABOBO", "SIANSOBA"]],
-    // Remplacez votre ligne actuelle par celle-ci :
-"SKYNET TECH" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]]
-]
+    "SKYNET TECH" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]]
+];
 
 if (isset($_POST['login'])) {
     $comp = $_POST['compagnie'];

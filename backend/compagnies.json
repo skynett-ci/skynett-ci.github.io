@@ -1,14 +1,14 @@
 {
     "AMT": {
         "mdp": "amt2026",
-        "gares": ["ADJAME", "ODIENE", "BOUAKE", "ABOBO", "SIANSOBA"]
+        "gares": ["ADJAME", "ODIENNE", "BOUAKE", "ABOBO", "SIANSOBA"]
     },
     "SKYNET": {
         "mdp": "sky2026",
         "gares": ["AGENCE_A", "AGENCE_B"]
     },
-    "VOTRE_NOUVELLE_COMPAGNIE": {
-        "mdp": "votre_mot_de_passe",
-        "gares": ["GARE_X", "GARE_Y"]
+    "SAIID": {
+        "mdp": "1234",
+        "gares": ["GARE_ABOBO", "GARE_ADJAME"]
     }
 }

@@ -20,31 +20,42 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: login.php"); 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sKynEt Tech - Dashboard</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; color: #333; }
-    
-    /* Top Bar */
-    .top-bar { background-color: #003366; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    
-    /* Nav Icons */
-    .nav-icons { background: white; padding: 15px; display: flex; justify-content: space-around; border-bottom: 3px solid #007bff; }
-    .nav-icons div { text-align: center; font-size: 13px; font-weight: 600; color: #555; cursor: pointer; }
-    .nav-icons div:hover { color: #007bff; }
+ <style>
+    :root {
+        --primary: #003366;      /* Bleu profond pro */
+        --accent: #f39c12;       /* Orange ambre élégant */
+        --bg: #f4f7f6;           /* Gris très clair */
+        --text: #2c3e50;         /* Gris foncé */
+    }
 
-    /* Content Card */
-    .content { background: white; margin: 20px auto; padding: 25px; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); margin: 0; color: var(--text); }
     
-    /* Form */
-    input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-    button { padding: 8px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-    button:hover { background-color: #0056b3; }
+    /* Top Bar avec dégradé */
+    .top-bar { 
+        background: linear-gradient(90deg, #003366 0%, #0056b3 100%); 
+        color: white; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; 
+    }
+    
+    /* Icônes de navigation */
+    .nav-icons { background: white; padding: 15px; display: flex; justify-content: space-around; border-bottom: 3px solid var(--accent); }
+    .nav-icons div { text-align: center; font-size: 13px; font-weight: 600; color: var(--primary); cursor: pointer; }
 
-    /* Table Pro */
-    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
-    th { background-color: #f8f9fa; color: #333; padding: 15px; border-bottom: 2px solid #dee2e6; text-transform: uppercase; font-size: 12px; }
-    td { padding: 15px; border-bottom: 1px solid #eee; }
+    /* Carte de contenu */
+    .content { background: white; margin: 20px auto; padding: 25px; max-width: 900px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    
+    /* Boutons et Inputs */
+    button { padding: 10px 25px; background-color: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    button:hover { background-color: #d68910; }
+
+    /* Tableau Élégant */
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; border-radius: 8px; overflow: hidden; }
+    th { background-color: var(--primary); color: white; padding: 15px; text-transform: uppercase; font-size: 12px; }
+    td { padding: 15px; border-bottom: 1px solid #edf2f7; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
     tr:hover { background-color: #f1f7ff; }
-    .total-row { background-color: #003366 !important; color: white; font-weight: bold; }
+
+    /* Ligne Totaux */
+    .total-row { background-color: var(--primary) !important; color: white; font-weight: bold; }
 </style>
 </head>
 <body>

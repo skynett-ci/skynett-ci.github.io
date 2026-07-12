@@ -20,19 +20,32 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: login.php"); 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sKynEt Tech - Dashboard</title>
-    <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; }
-        .top-bar { background-color: #007bff; color: white; padding: 10px; display: flex; justify-content: space-between; }
-        .nav-icons { background: white; padding: 10px; display: flex; justify-content: space-around; border-bottom: 2px solid #007bff; }
-        .nav-icons div { text-align: center; font-size: 12px; }
-        .tabs { display: flex; margin-top: 10px; padding: 0 10px; }
-        .tab { padding: 10px 20px; background: #ddd; margin-right: 5px; cursor: pointer; }
-        .tab.active { background: #f39c12; color: white; }
-        .content { background: white; margin: 10px; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background-color: #e9ecef; }
-    </style>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; color: #333; }
+    
+    /* Top Bar */
+    .top-bar { background-color: #003366; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    
+    /* Nav Icons */
+    .nav-icons { background: white; padding: 15px; display: flex; justify-content: space-around; border-bottom: 3px solid #007bff; }
+    .nav-icons div { text-align: center; font-size: 13px; font-weight: 600; color: #555; cursor: pointer; }
+    .nav-icons div:hover { color: #007bff; }
+
+    /* Content Card */
+    .content { background: white; margin: 20px auto; padding: 25px; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    
+    /* Form */
+    input[type="date"] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 8px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #0056b3; }
+
+    /* Table Pro */
+    table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 20px; }
+    th { background-color: #f8f9fa; color: #333; padding: 15px; border-bottom: 2px solid #dee2e6; text-transform: uppercase; font-size: 12px; }
+    td { padding: 15px; border-bottom: 1px solid #eee; }
+    tr:hover { background-color: #f1f7ff; }
+    .total-row { background-color: #003366 !important; color: white; font-weight: bold; }
+</style>
 </head>
 <body>
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Sécurité : Uniquement accessible par SKYNET TECH
-if ($_SESSION['compagnie'] !== 'SKYNET TECH') { header("Location: admin.php"); exit(); }
+if ($_SESSION['compagnie'] !== 'SKYNET') { header("Location: admin.php"); exit(); }
 
 $fichier_json = 'compagnies.json';
 $compagnies = json_decode(file_get_contents($fichier_json), true);

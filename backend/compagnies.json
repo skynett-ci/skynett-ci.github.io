@@ -1,0 +1,19 @@
+{
+    "AMT": {
+        "mdp": "amt2026",
+        "gares": [
+            "ADJAME",
+            "ODIENE",
+            "BOUAKE",
+            "ABOBO",
+            "SIANSOBA"
+        ]
+    },
+    "SKYNET": {
+        "mdp": "sky2026",
+        "gares": [
+            "AGENCE_A",
+            "AGENCE_B"
+        ]
+    }
+}

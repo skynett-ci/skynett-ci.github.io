@@ -52,15 +52,17 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: login.php"); 
 </div>
 
 <div class="nav-icons">
-    <a href="admin.php"><div>🏠<br>Accueil</div></a>
+    <a href="admin.php" style="text-decoration:none; color:inherit;"><div>🏠<br>Accueil</div></a>
     <div>🏢<br>Gares</div>
     <div>📊<br>Finance</div>
-    
-    <!-- Lien vers Admin seulement pour SKYNET TECH -->
-    <?php if($_SESSION['compagnie'] === 'SKYNET TECH'): ?>
-        <a href="admin_skynet.php"><div>⚙️<br>Admin</div></a>
+
+    <!-- CODE CORRIGÉ POUR LE BOUTON ADMIN -->
+    <?php if($_SESSION['compagnie'] === 'SKYNET'): ?>
+        <a href="admin_skynet.php" style="text-decoration:none; color:inherit;">
+            <div style="cursor:pointer; color: var(--primary);">⚙️<br>Admin</div>
+        </a>
     <?php else: ?>
-        <div style="opacity:0.5;">⚙️<br>Admin</div>
+        <div style="opacity:0.3; cursor:not-allowed;">⚙️<br>Admin</div>
     <?php endif; ?>
 </div>
 

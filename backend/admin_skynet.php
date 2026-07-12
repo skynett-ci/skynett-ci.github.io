@@ -6,7 +6,7 @@ if ($_SESSION['compagnie'] !== 'SKYNET') { header("Location: admin.php"); exit()
 $compagnies = [
     "AMT" => ["mdp" => "amt2026", "gares" => ["ADJAME", "ODIENE", "BOUAKE", "ABOBO", "SIANSOBA"]],
     "SKYNET" => ["mdp" => "sky2026", "gares" => ["AGENCE_A", "AGENCE_B"]],
-    "NOUVELLE_COMPAGNIE" => ["mdp" => "pass123", "gares" => []] // Ajoutez vos lignes ici
+    "SAIID" => ["mdp" => "1234", "gares" => ["abobo","adjame"]] // Ajoutez vos lignes ici
 ];
 ?>
 <!DOCTYPE html>

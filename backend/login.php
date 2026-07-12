@@ -17,6 +17,7 @@ if (isset($_POST['login'])) {
 }
 ?>
 <!-- ... (le reste du HTML reste identique) ... -->
+<!-- ... (le reste du HTML reste identique) ... -->
 <!DOCTYPE html>
 <html>
 <head>

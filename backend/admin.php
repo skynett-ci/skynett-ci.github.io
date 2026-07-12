@@ -41,6 +41,9 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: admin.php"); 
         .form-group { padding: 20px; }
         input, select { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
         button { width: 100%; padding: 10px; background-color: #0056b3; color: white; border: none; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
     </style>
 </head>
 <body>
@@ -70,8 +73,24 @@ if (isset($_GET['logout'])) { session_destroy(); header("Location: admin.php"); 
         <div class="login-header">GARE : <?php echo $_SESSION['gare_selectionnee']; ?></div>
         <div class="form-group">
             <a href="?reset_gare=1">← Changer de gare</a>
-            <!-- Ici votre tableau d'affichage des données -->
-            <p>Affichage des données pour <?php echo $_SESSION['gare_selectionnee']; ?>...</p>
+            
+            <table>
+                <tr><th>Date</th><th>Montant (FCFA)</th></tr>
+                <?php
+                $fichier = "clotures_" . $_SESSION['gare_selectionnee'] . ".csv";
+                if (file_exists($fichier)) {
+                    $lignes = array_reverse(file($fichier));
+                    foreach($lignes as $l) {
+                        $d = explode(";", $l);
+                        if(count($d) >= 2) {
+                            echo "<tr><td>{$d[0]}</td><td>{$d[1]}</td></tr>";
+                        }
+                    }
+                } else {
+                    echo "<tr><td colspan='2'>Aucune donnée.</td></tr>";
+                }
+                ?>
+            </table>
         </div>
     <?php endif; ?>
 </div>

@@ -1,17 +1,19 @@
 <?php
-// Clé API Wave - À garder absolument secrète
-$apiKey = 'wave_sn_prod_YhUNb9d...i4bA6'; 
+// Clé API Wave - Remplacez par votre clé complète (sans les ...)
+$apiKey = 'VOTRE_CLE_COMPLETE_ICI'; 
 
 $url = 'https://api.wave.com/v1/checkout/sessions';
 
-// Récupération du montant envoyé par WinDev Mobile
-$montant = $_POST['montant'] ?? '0';
+// Récupération du montant envoyé par WinDev Mobile en format JSON
+$data_input = json_decode(file_get_contents('php://input'), true);
+$montant = $data_input['montant'] ?? '0';
 
 $data = [
     "amount" => $montant,
     "currency" => "XOF",
-    "error_url" => "https://skynett-ci-github-io.onrender.com/api/error.php",
-    "success_url" => "https://skynett-ci-github-io.onrender.com/api/success.php"
+    // Assurez-vous que le chemin /backend/api/ est bien présent si vos fichiers sont dans ce dossier
+    "error_url" => "https://skynett-ci-github-io.onrender.com/backend/api/error.php",
+    "success_url" => "https://skynett-ci-github-io.onrender.com/backend/api/success.php"
 ];
 
 $ch = curl_init($url);

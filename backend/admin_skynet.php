@@ -1,46 +1,36 @@
 <?php
-session_start();
-if ($_SESSION['compagnie'] !== 'SKYNET') { header("Location: admin.php"); exit(); }
+// Charger le fichier JSON
+$fichier = 'compagnies.json';
+$data = json_decode(file_get_contents($fichier), true);
 
-// --- CORRECTION : ON LIT LE FICHIER JSON ICI ---
-$fichier_json = 'compagnies.json';
-$compagnies = [];
-
-if (file_exists($fichier_json)) {
-    $contenu = file_get_contents($fichier_json);
-    $compagnies = json_decode($contenu, true) ?? [];
+// Action AJOUTER Compagnie
+if (isset($_POST['btn_ajouter'])) {
+    $compagnie = $_POST['nom_compagnie'];
+    $data[$compagnie] = [
+        "mdp" => $_POST['mdp'],
+        "gares" => explode(",", $_POST['gares'])
+    ];
+    file_put_contents($fichier, json_encode($data, JSON_PRETTY_PRINT));
 }
-// ------------------------------------------------
+
+// Action SUPPRIMER (via un lien)
+if (isset($_GET['supprimer'])) {
+    unset($data[$_GET['supprimer']]);
+    file_put_contents($fichier, json_encode($data, JSON_PRETTY_PRINT));
+}
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Gestion Automatique - sKynEt Tech</title>
-    <style>
-        body { font-family: sans-serif; background: #f4f7f6; padding: 20px; }
-        .content { max-width: 800px; margin: auto; background: white; padding: 25px; border-radius: 12px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background: #003366; color: white; }
-    </style>
-</head>
-<body>
-<div class="content">
-    <h2>⚙️ Administration (Lecture automatique)</h2>
-    <p>Le tableau ci-dessous lit directement les données du fichier <b>compagnies.json</b>.</p>
-    
-    <table>
-        <tr><th>Compagnie</th><th>Mot de passe</th></tr>
-        <?php foreach($compagnies as $nom => $data): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($nom); ?></td>
-            <td><?php echo htmlspecialchars($data['mdp']); ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-    <br>
-    <a href="admin.php">← Retour Dashboard</a>
-</div>
-</body>
-</html>
+
+<!-- Affichage du TABLEAU comme sur votre schéma -->
+<table>
+    <tr><th>Compagnie</th><th>Gares</th><th>Actions</th></tr>
+    <?php foreach ($data as $nom => $infos): ?>
+    <tr>
+        <td><?= $nom ?></td>
+        <td><?= implode(", ", $infos['gares']) ?></td>
+        <td>
+            <a href="?supprimer=<?= $nom ?>">Supprimer</a>
+            <button>Modifier</button>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

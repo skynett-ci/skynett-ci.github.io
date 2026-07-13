@@ -1,14 +1,10 @@
 {
-    "AMT": {
-        "mdp": "amt2026",
-        "gares": ["ADJAME", "ODIENNE", "BOUAKE", "ABOBO", "SIANSOBA"]
-    },
-    "SKYNET": {
-        "mdp": "sky2026",
-        "gares": ["AGENCE_A", "AGENCE_B"]
-    },
-    "SAIID": {
-        "mdp": "1234",
-        "gares": ["GARE_ABOBO", "GARE_ADJAME"]
-    }
+  "AMT": {
+    "mdp": "pass123",
+    "gares": ["ABOBO", "ADJAME"]
+  },
+  "TSR": {
+    "mdp": "pass456",
+    "gares": ["YOP OUAIS", "PLATEAU"]
+  }
 }
